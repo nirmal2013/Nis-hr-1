@@ -1,2 +1,6 @@
 node_modules
 build
+
+src/client/public/bundle.js
+
+src/client/public/bundle.js.map

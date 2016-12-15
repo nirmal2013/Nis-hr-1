@@ -9,7 +9,7 @@ const App = () => {
 
   return (
     <div>
-      <p>Webpack watchning now! Yay!!</p>
+      <p>Webpack watching now! Yay!!</p>
       <FirstComponent name="I'm ESLinted" />
     </div>
   );
