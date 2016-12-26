@@ -23,7 +23,7 @@ const FirstComponent = () => {
       const {name} = this.props;
 
       return  <div onClick={ (e) => { this.handleClick(e); } }>
-                <h1>{ this.state.show ? name : "I'm Hidden" }</h1>
+                <h1>{ this.state.show ? name : "Click to reveal Redux store value." }</h1>
               </div>;
     }
 
