@@ -6,7 +6,6 @@ import App from './app/app';
 
 let shouldExposeReduxTools = true;
 if(process.env.NODE_ENV === 'production') {
-  console.log(process.env.NODE_ENV);
   shouldExposeReduxTools = false;
 }
 
