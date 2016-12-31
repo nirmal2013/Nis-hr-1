@@ -8,7 +8,7 @@ import defaults from './defaults';
 
 const AppStore = {
 
-	create: (shouldExposeReduxTools = true) => {
+	create: (shouldExposeReduxTools) => {
 		// The Redux Store.
 		let store;
 

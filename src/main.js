@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import AppStore from './app/redux/store';
 import App from './app/app';
 
-let store = AppStore.create();
 
 render(
   <Provider store={store}>
