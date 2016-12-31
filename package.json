@@ -4,7 +4,7 @@
   "description": "React, Redux, Webpack & Express",
   "main": "index.js",
   "scripts": {
-    "start": "node server",
+    "start": "node server.js",
     "postinstall": "node deploy"
   },
   "author": "",
