@@ -9,7 +9,7 @@ const App = ({UI}, {store}) => {
 
   return (
     <div>
-      <p>Webpack watching now! Yay!!</p>
+      <p>Webpack is Hot and watching now! SShhhh!!!</p>
       <FirstComponent name={UI.type} />
     </div>
   );

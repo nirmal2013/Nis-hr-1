@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
-import {Provider} from 'react-redux';
-import AppStore from './redux/store';
-import App from './app';
+import { Provider } from 'react-redux';
+import AppStore from './app/redux/store';
+import App from './app/app';
 
 let defaultData = {
-  APP_NAME: 'starter',
+  APP_NAME: 'React Starter',
   UI: {
-    type: 'Boilerplate'
+    type: 'Boilerplate project with node server and webpack (watch)'
   }
 };
 

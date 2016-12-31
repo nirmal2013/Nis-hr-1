@@ -5,8 +5,6 @@ const FirstComponent = () => {
   return Object.assign({}, React.Component.prototype, {
 
     componentWillMount() {
-      console.log('Will Mount');
-
       this.state = {
         show: false
       };
