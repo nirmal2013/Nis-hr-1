@@ -4,16 +4,18 @@ import {
 	compose
 } from 'redux';
 
+import defaults from './defaults';
+
 const AppStore = {
 
-	create: (defaultData, shouldExposeReduxTools) => {
+	create: (shouldExposeReduxTools = true) => {
 		// The Redux Store.
 		let store;
 
 		if (shouldExposeReduxTools) {
 			store = createStore(
 				CombinedReducers,
-				defaultData,
+				defaults,
 				compose(
 					window.devToolsExtension ? window.devToolsExtension() : f => f // WTF is f => f -> https://github.com/reactjs/redux/issues/632
 				)
@@ -21,7 +23,7 @@ const AppStore = {
 		} else {
 			store = createStore(
 				CombinedReducers,
-				defaultData
+				defaults
 			);
 		}
 
@@ -38,7 +40,7 @@ const AppStore = {
 		};
 
 		return store;
-	}	
+	}
 };
 
 export default AppStore;

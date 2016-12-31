@@ -51,7 +51,7 @@ module.exports = function() {
 
   var bundlerOptions = {
     // inform webpack to serve from build path. When proxying:
-    // http://localhost:3000/build -> http://localhost:8080/build
+    // http://localhost:3100/build -> http://localhost:8080/build
     publicPath: '/build/',
 
     // for Hot Replacement
