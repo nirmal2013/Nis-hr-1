@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 var buildPath = path.resolve(__dirname, 'public', 'build');
@@ -16,13 +17,19 @@ var config = {
   },
   module: {
     loaders: [{
-      test: /\.js$/,
-      loader: 'babel',
-      exclude: [nodeModulesPath]
-    },{
-      test: /\.css$/,
-      loader: 'style!css'
-    }]
+        test: /\.js$/,
+        loader: 'babel',
+        exclude: [nodeModulesPath]
+      },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('css!sass')
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192'
+      }
+    ]
   },
   // https://facebook.github.io/react/docs/optimizing-performance.html#use-the-production-build
   plugins: [
@@ -37,6 +44,9 @@ var config = {
       compress: {
         warnings: false
       }
+    }),
+    new ExtractTextPlugin(BUILD_DIR + '/styles.css', {
+      allChunks: true
     })
   ]
 };
