@@ -34,3 +34,4 @@ $ npm postinstall
 * Ready for prototyping
 * Production ready - deploy to any of node supported server and the project is up and running
 * Uses Redux
+* Hot Module Replacement
