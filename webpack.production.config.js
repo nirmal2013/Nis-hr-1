@@ -45,7 +45,7 @@ var config = {
         warnings: false
       }
     }),
-    new ExtractTextPlugin(BUILD_DIR + '/styles.css', {
+    new ExtractTextPlugin('styles.css', {
       allChunks: true
     })
   ]

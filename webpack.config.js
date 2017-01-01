@@ -43,7 +43,7 @@ var config = {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('css!sass')
       },
-      { 
+      {
         test: /\.(png|jpg)$/,
         loader: 'url-loader?limit=8192'
       }
@@ -53,7 +53,7 @@ var config = {
   // We have to manually add the Hot Replacement plugin when running from Node
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin(BUILD_DIR + '/styles.css', {
+    new ExtractTextPlugin('styles.css', {
       allChunks: true
     })]
 };
