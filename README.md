@@ -35,3 +35,14 @@ $ npm postinstall
 * Production ready - deploy to any of node supported server and the project is up and running
 * Uses Redux
 * Hot Module Replacement
+
+## Live app
+
+Code from the stable branch is automaticalluy deployed to Heroku servers. Check the app under
+```
+https://react-starter-webpack.herokuapp.com/
+```
+
+## Author
+
+- [Guna](https://github.com/Gunavel) 
