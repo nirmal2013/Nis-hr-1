@@ -31,6 +31,7 @@ $ npm postinstall
 
 * Expressive and intuitive Node server setup, with proxying capabilities
 * Super fast build using Webpack
+* SASS support
 * Ready for prototyping
 * Production ready - deploy to any of node supported server and the project is up and running
 * Uses Redux
@@ -45,4 +46,4 @@ https://react-starter-webpack.herokuapp.com/
 
 ## Author
 
-- [Guna](https://github.com/Gunavel) 
+- [Guna](https://github.com/Gunavel)

@@ -4,6 +4,7 @@ server/bundle.js  uses this config and builds the output
  */
 var webpack = require('webpack');
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var NODE_MODULES_DIR = path.resolve(__dirname, 'node_modules');
 var BUILD_DIR = path.resolve(__dirname, 'public', 'build');
@@ -39,14 +40,22 @@ var config = {
         exclude: [NODE_MODULES_DIR]
       },
       {
-        test: /\.less$/,
-        loader: "style!css!autoprefixer!less"
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('css!sass')
+      },
+      { 
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192'
       }
     ]
   },
 
   // We have to manually add the Hot Replacement plugin when running from Node
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin(BUILD_DIR + '/styles.css', {
+      allChunks: true
+    })]
 };
 
 module.exports = config;

@@ -1,4 +1,5 @@
 import React from 'react';
+import './FirstComponent.scss';
 
 const FirstComponent = () => {
 
@@ -20,7 +21,7 @@ const FirstComponent = () => {
 
       const {name} = this.props;
 
-      return  <div onClick={ (e) => { this.handleClick(e); } }>
+      return  <div className="container" onClick={ (e) => { this.handleClick(e); } }>
                 <h1>{ this.state.show ? name : "Click to reveal Redux store value." }</h1>
               </div>;
     }
