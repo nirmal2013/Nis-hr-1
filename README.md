@@ -9,6 +9,3 @@ Download or fork the project and
 $ npm install
 ```
 to install dependencies.
-
-
-* Expressive and intuitive syntax
