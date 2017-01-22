@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+import { Router, Route, browserHistory } from 'react-router';
 import AppStore from './app/redux/store';
 import App from './app/app';
 
@@ -9,11 +10,13 @@ if(process.env.NODE_ENV === 'production') {
   shouldExposeReduxTools = false;
 }
 
-let store = AppStore.create(shouldExposeReduxTools);
+const store = AppStore.create(shouldExposeReduxTools);
 
 render(
   <Provider store={store}>
-    <App />
+    <Router history={browserHistory}>
+      <Route path="/" component={App} />
+    </Router>
   </Provider>,
   document.getElementById('app')
 );

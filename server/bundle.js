@@ -62,6 +62,9 @@ module.exports = function() {
     noInfo: true,
     stats: {
       colors: true
+    },
+    devServer: {
+      historyApiFallback: true
     }
   };
 

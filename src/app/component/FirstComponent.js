@@ -22,7 +22,7 @@ const FirstComponent = () => {
       const {name} = this.props;
 
       return  <div className="container" onClick={ (e) => { this.handleClick(e); } }>
-                <h1>{ this.state.show ? name : "Click to reveal Redux store value." }</h1>
+                <h1>{ this.state.show ? name : "Click" }</h1>
               </div>;
     }
 
