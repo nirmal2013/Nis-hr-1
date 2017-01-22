@@ -32,6 +32,10 @@ var config = {
     publicPath: '/build/'
   },
 
+  resolve: {
+    root: path.resolve('./src')
+  },
+
   module: {
     loaders: [
       {
@@ -52,6 +56,10 @@ var config = {
 
   // We have to manually add the Hot Replacement plugin when running from Node
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin('styles.css', {
       allChunks: true

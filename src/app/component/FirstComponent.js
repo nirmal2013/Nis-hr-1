@@ -1,5 +1,6 @@
 import React from 'react';
-import './FirstComponent.scss';
+import 'app/component/FirstComponent.scss';
+import { getServerCurrentTimeStamp } from 'app/utils/utils';
 
 const FirstComponent = () => {
 
@@ -7,23 +8,27 @@ const FirstComponent = () => {
 
     componentWillMount() {
       this.state = {
-        show: false
+        timeStamp: ''
       };
     },
 
     handleClick(e) {
-      this.setState({
-        show: !this.state.show
+      getServerCurrentTimeStamp().then((data) => {
+        this.setState({
+          timeStamp: data.timeStamp
+        });
       });
     },
 
     render() {
 
-      const {name} = this.props;
+      let content =
+        <div>
+          <button id="getTimeStamp" onClick={(e) => {this.handleClick(e);}}>Get Server Time</button>
+          <h4>{ this.state.timeStamp }</h4>
+        </div>;
 
-      return  <div className="container" onClick={ (e) => { this.handleClick(e); } }>
-                <h1>{ this.state.show ? name : "Click" }</h1>
-              </div>;
+      return content;
     }
 
   });
@@ -31,7 +36,7 @@ const FirstComponent = () => {
 };
 
 FirstComponent.propTypes = {
-  name: React.PropTypes.string.isRequired
+    name: React.PropTypes.string.isRequired
 };
 
 export default FirstComponent;

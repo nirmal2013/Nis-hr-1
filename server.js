@@ -3,6 +3,7 @@ var path = require('path');
 var httpProxy = require('http-proxy');
 var chalk = require('chalk');
 var favicon = require('serve-favicon');
+var moment = require('moment-timezone');
 
 var proxy = httpProxy.createProxyServer();
 var app = express();
@@ -14,6 +15,10 @@ var publicPath = path.resolve(__dirname, 'public');
 
 app.use(express.static(publicPath));
 app.use(favicon(__dirname + '/src/assets/favicon.ico'));
+app.get('/getTime', function (req, res) {
+  var timeStamp = moment().tz("Asia/Kolkata").format();
+  res.send({timeStamp: timeStamp});
+})
 
 if(!isProduction) {
   var bundle = require('./server/bundle.js');

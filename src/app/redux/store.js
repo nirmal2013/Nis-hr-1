@@ -34,7 +34,7 @@ const AppStore = {
 				try {
 					func();
 				} catch (e) {
-					console.error('Error in some userdefined subscribe method.', e.stack);
+					console.error('Error in some user defined subscribe method.', e.stack);
 				}
 			});
 		};

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import FastClick from 'fastclick';
-import FirstComponent from './component/FirstComponent';
+import FirstComponent from 'app/component/FirstComponent';
 
 const App = ({UI}, {store}) => {
 

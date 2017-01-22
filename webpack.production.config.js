@@ -15,6 +15,12 @@ var config = {
     path: buildPath,
     filename: 'bundle.js'
   },
+  resolve: {
+    modules: [
+      path.resolve('./src'),
+      path.resolve('./node_modules')
+    ]
+  },
   module: {
     loaders: [{
         test: /\.js$/,
@@ -33,6 +39,10 @@ var config = {
   },
   // https://facebook.github.io/react/docs/optimizing-performance.html#use-the-production-build
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
     new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
       'process.env': {
