@@ -9,7 +9,6 @@ const App = ({UI}, {store}) => {
 
   return (
     <div>
-      <p>A React Redux Node App with development and production Webpack build</p>
       <FirstComponent name={UI.type} />
     </div>
   );

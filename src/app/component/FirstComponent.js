@@ -25,7 +25,7 @@ const FirstComponent = () => {
       let content =
         <div>
           <button id="getTimeStamp" onClick={(e) => {this.handleClick(e);}}>Get Server Time</button>
-          <h4>{ this.state.timeStamp }</h4>
+          <h3>{ this.state.timeStamp }</h3>
         </div>;
 
       return content;
